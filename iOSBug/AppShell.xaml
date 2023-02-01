@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<Shell
+    x:Class="TriggerProblemiOSRelease.AppShell"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:local="clr-namespace:TriggerProblemiOSRelease"
+    Shell.FlyoutBehavior="Disabled">
+
+    <ShellContent
+        Title="Home"
+        ContentTemplate="{DataTemplate local:MainPage}"
+        Route="MainPage" />
+
+    <TabBar>
+        <Tab Title="Dashboard" 
+                x:Name="DashTabA">
+            <ShellContent
+                Route="DashboardPageA"
+                Title="DashboardPageA"
+                ContentTemplate="{DataTemplate local:DashboardPageA}"
+                Shell.NavBarIsVisible="False" />
+        </Tab>
+        <Tab Title="Dashboard" 
+                IsVisible="False"
+                 x:Name="DashTabB">
+            <ShellContent 
+                Route="DashboardPageB"
+                Title="DashboardPage"
+                ContentTemplate="{DataTemplate local:DashboardPageB}"
+                Shell.NavBarIsVisible="False" />
+        </Tab>
+        <Tab Title="OtherPage">
+            <ShellContent
+                Route="NegoziPage"
+                ContentTemplate="{DataTemplate local:OtherPage}"
+                Shell.NavBarIsVisible="False" />
+        </Tab>
+    </TabBar>
+
+</Shell>

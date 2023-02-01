@@ -1,0 +1,133 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:local="clr-namespace:TriggerProblemiOSRelease"
+    x:Class="TriggerProblemiOSRelease.OtherPage">
+
+    <ContentPage.Resources>
+
+        <local:RegistrationBackgroundColorHeaderConverter x:Key="registrationBackgroundColorHeaderConverter" />
+
+    </ContentPage.Resources>
+
+    <ScrollView>
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="*" />
+                <RowDefinition Height="Auto" />
+            </Grid.RowDefinitions>
+
+            <!--#region Header-->
+
+            <Grid Margin="18,18,18,12">
+
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                </Grid.RowDefinitions>
+
+                <Image
+                    x:Name="backImage"
+                    HeightRequest="40"
+                    HorizontalOptions="Start"
+                    Source="icona_back"
+                    VerticalOptions="Center" />
+
+                <Label
+                    HorizontalOptions="CenterAndExpand"
+                    Style="{StaticResource TextRegular16}"
+                    Text="{Binding TextLabel}"
+                    VerticalOptions="Center" />
+
+                <Border
+                    Grid.Row="2"
+                    Margin="0,16,0,0"
+                    Padding="8"
+                    Stroke="{StaticResource BorderGroupButtonsColor}"
+                    StrokeThickness="2">
+                    <Border.StrokeShape>
+                        <RoundRectangle CornerRadius="8" />
+                    </Border.StrokeShape>
+
+                    <Grid VerticalOptions="Center">
+
+                        <Border
+                            Grid.Column="1"
+                            Margin="4,0,0,0"
+                            Background="White"
+                            Stroke="Black"
+                            HorizontalOptions="FillAndExpand"
+                            StrokeThickness="1"
+                            VerticalOptions="Center">
+                            <Border.Triggers>
+                                <DataTrigger
+                                    Binding="{Binding Enabled}"
+                                    TargetType="Border"
+                                    Value="True">
+                                    <Setter Property="Background" Value="#FFB700" />
+                                    <Setter Property="Stroke" Value="White" />
+                                </DataTrigger>
+                                <DataTrigger
+                                    Binding="{Binding Enabled}"
+                                    TargetType="Border"
+                                    Value="False">
+                                    <Setter Property="Background" Value="White" />
+                                    <Setter Property="Stroke" Value="Black" />
+                                </DataTrigger>
+                            </Border.Triggers>
+                            <Border.StrokeShape>
+                                <RoundRectangle CornerRadius="10,10,10,10" />
+                            </Border.StrokeShape>
+                            <Label
+                                Margin="0"
+                                Padding="10"
+                                VerticalTextAlignment="Center"
+                                HorizontalOptions="CenterAndExpand"
+                                HorizontalTextAlignment="End"
+                                Style="{StaticResource TextRegular16}"
+                                Text="Return to MainPage" />
+                            <Border.GestureRecognizers>
+                                <TapGestureRecognizer Tapped="ReturnMainTapped" />
+                            </Border.GestureRecognizers>
+                        </Border>
+
+
+                    </Grid>
+                </Border>
+
+            </Grid>
+
+            <!--#endregion-->
+
+            <!--#region Body-->
+
+            <!--<ScrollView x:Name="scrollViewBody" Grid.Row="1">
+
+                <Grid
+                BackgroundColor="{StaticResource LoginBackgroundColor}"
+                BindableLayout.ItemTemplateSelector="{StaticResource RegistrationTemplateSelector}"
+                BindableLayout.ItemsSource="{Binding RegistrationSteps}"
+                HorizontalOptions="FillAndExpand"
+                VerticalOptions="FillAndExpand">
+
+            -->
+            <!--  Qui carichiamo dinamicamente la parte che rallenta la navigazione  -->
+            <!--
+
+                </Grid>
+            </ScrollView>-->
+
+            <!--#endregion-->
+
+            <!--#region Footer-->
+
+
+            <!--#endregion-->
+
+        </Grid>
+    </ScrollView>
+
+</ContentPage>

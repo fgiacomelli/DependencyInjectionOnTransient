@@ -1,0 +1,52 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:local="clr-namespace:TriggerProblemiOSRelease"
+    BackgroundColor="White"
+    x:Class="TriggerProblemiOSRelease.DashboardPageA">
+
+    <ContentPage.Resources>
+
+        <local:RegistrationBackgroundColorHeaderConverter x:Key="registrationBackgroundColorHeaderConverter" />
+
+    </ContentPage.Resources>
+
+    <ScrollView>
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="*" />
+                <RowDefinition Height="Auto" />
+            </Grid.RowDefinitions>
+
+            <!--#region Header-->
+
+            <Grid Margin="18,18,18,12">
+
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                </Grid.RowDefinitions>
+
+                <Image
+                    x:Name="backImage"
+                    HeightRequest="40"
+                    HorizontalOptions="Start"
+                    Source="icona_back"
+                    VerticalOptions="Center" />
+
+                <Label
+                    HorizontalOptions="CenterAndExpand"
+                    Style="{StaticResource TextRegular16}"
+                    Text="DashboardA"
+                    VerticalOptions="Center" />
+
+
+            </Grid>
+
+        </Grid>
+    </ScrollView>
+
+</ContentPage>
